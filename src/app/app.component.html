@@ -175,6 +175,11 @@
       margin-block: 1.5rem;
     }
   }
+
+  #map {
+    width: 100%;
+    height: 400px;
+  }
 </style>
 
 <main class="main">
@@ -227,7 +232,14 @@
       </svg>
       <h1>{{ title }}</h1>
       <p>Bike Coordinates</p>
-      <app-location-display></app-location-display>
+
+      <app-location-display id="app-location-display"></app-location-display>
+      <iframe id="map" width="600" height="450"frameborder="0" style="border:0"
+      src="https://www.google.com/maps/embed/v1/view?key=AIzaSyCi-uxGkt7ZSP3Po0mTqs9m4krhR18ZZ7M&center={{lat}},{{long}}&zoom=15" allowfullscreen>
+      </iframe>
+      <p id="test">{{ lat }}</p>
+
+        
     </div>
     <div class="divider" role="separator" aria-label="Divider"></div>
     
