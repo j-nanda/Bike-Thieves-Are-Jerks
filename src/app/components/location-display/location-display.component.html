@@ -1,9 +1,38 @@
-<!-- src/app/components/location-display/location-display.component.html -->
-<div *ngIf="locationData">
-    <p>Latitude: {{ locationData.lat }}</p>
-    <p>Longitude: {{ locationData.lon }}</p>
-    <p>Accuracy: {{ locationData.accuracy }} meters</p>
 
+<style>
+.container {
+  display: flex;
+}
 
+.text-container {
+  flex: 1;
+  padding: 20px;
+  background-color: #f4f4f4;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  font-family: 'Arial', sans-serif;
+}
 
+.bold {
+  font-weight: bold;
+}
+
+.map-container {
+  flex: 2;
+  height: 400px; /* You can adjust the height as needed */
+  width: 400px;
+  margin-left: 20px; /* Add spacing between text and map */
+  background-color: #e0e0e0;
+  border: 1px solid #ccc;
+  border-radius: 5%;
+}
+</style>
+
+<div *ngIf="locationData" class="container">
+  <div class="text-container">
+    <p><span class="bold">Location:</span> {{ cityState }}</p>
+    <p><span class="bold">Accuracy:</span> {{ locationData.accuracy }} meters</p>
+    <p><span class="bold">Last Updated:</span> {{ lastUpdated }}</p>
   </div>
+  <div #mapContainer class="map-container"></div>
+</div>

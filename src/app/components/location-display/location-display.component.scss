@@ -1,0 +1,42 @@
+.location-display {
+    display: block;
+    background-color: #f4f4f4;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    font-family: 'Arial', sans-serif;
+
+    p {
+        color: #b44747;
+        font-size: 16px;
+        line-height: 1.5;
+
+        // Styling to denote key-value pairs
+        &::before {
+            font-weight: bold;
+        }
+    }
+
+    // Styling for latitude key
+    p:nth-of-type(1)::before {
+        content: 'Latitude: ';
+    }
+
+    // Styling for longitude key
+    p:nth-of-type(2)::before {
+        content: 'Longitude: ';
+    }
+
+    // Styling for accuracy key
+    p:nth-of-type(3)::before {
+        content: 'Accuracy up to: ';
+    }
+
+    // Specific styles for the map container
+    #mapContainer {
+        margin-top: 20px;
+        background-color: #e0e0e0;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+    }
+}
